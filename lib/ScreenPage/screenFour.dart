@@ -8,51 +8,60 @@ class ScreenFour extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color.fromARGB(255, 234, 143, 174),
-      appBar: AppBar(
-        toolbarHeight: 120,
-        backgroundColor: Color.fromARGB(255,55,78,123),
-        automaticallyImplyLeading: false,
-        titleSpacing: 0,
-        title: Row(
-          children: <Widget>[
-            SizedBox(width: screenWidth / 6.5),
-            Icon(
-              Icons.account_circle,
-              size: 80,
-            ),
-          ],
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+        backgroundColor: Color.fromARGB(255, 234, 143, 174),
+        
+        
+        ////////////AWAL TOP BAR////////////
+        appBar: AppBar(
+          toolbarHeight: 120,
+          backgroundColor: Color.fromARGB(255,55,78,123),
+          automaticallyImplyLeading: false,
+          titleSpacing: 0,
+          title: Row(
+            children: <Widget>[
+              SizedBox(width: screenWidth / 6.5),
+              Icon(
+                Icons.account_circle,
+                size: 80,
+              ),
+            ],
+          ),
         ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 20, right: 20),
-        child: ListView(
-          children: [
-            //first button
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text("Account settings"),
-              style: ElevatedButton.styleFrom(primary: Color.fromARGB(255,55,78,123)),
-            ),
-
-            //second button
-            SizedBox(height: 5),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text("Licenses"),
-              style: ElevatedButton.styleFrom(primary: Color.fromARGB(255,55,78,123)),
-            ),
-
-            //third button
-            SizedBox(height: 5),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text("Contact Us"),
-              style: ElevatedButton.styleFrom(primary: Color.fromARGB(255,55,78,123)),
-            )
-          ],
+        ////////////AKHIR TOP BAR////////////
+    
+    
+        body: Padding(
+          padding: const EdgeInsets.only(left: 20, right: 20),
+          child: ListView(
+            children: [
+              //first button
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text("Account settings"),
+                style: ElevatedButton.styleFrom(primary: Color.fromARGB(255,55,78,123)),
+              ),
+    
+              //second button
+              SizedBox(height: 5),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text("Licenses"),
+                style: ElevatedButton.styleFrom(primary: Color.fromARGB(255,55,78,123)),
+              ),
+    
+              //third button
+              SizedBox(height: 5),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text("Contact Us"),
+                style: ElevatedButton.styleFrom(primary: Color.fromARGB(255,55,78,123)),
+              )
+            ],
+          ),
         ),
       ),
     );
