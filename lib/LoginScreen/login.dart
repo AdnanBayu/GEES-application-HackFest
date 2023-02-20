@@ -19,12 +19,20 @@ class LoginPage extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 80),
+                SizedBox(height: 90),
 
                 //logo
-                Icon(
-                  Icons.lock,
-                  size: 80,
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    gradient: LinearGradient(
+                      colors: [
+                        Colors.white38,
+                        Colors.white,                        
+                      ],
+                    ),
+                  ),
+                  child: Image.asset("assetSaya/logoGEES.png", scale: 2.5),
                 ),
 
                 SizedBox(height: 25),
@@ -33,13 +41,13 @@ class LoginPage extends StatelessWidget {
                 Text(
                   "Hi, welcome back👋",
                   style: TextStyle(
-                    fontSize: 25,
+                    fontSize: 12,
                     fontWeight: FontWeight.w500,
                     color: Colors.white,
                   ),
                 ),
 
-                SizedBox(height: 50),
+                SizedBox(height: 40),
 
                 //username textfield
                 MyTextField(
