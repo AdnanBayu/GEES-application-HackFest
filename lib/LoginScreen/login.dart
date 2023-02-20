@@ -13,7 +13,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 234, 143, 174),
+      backgroundColor: Color.fromARGB(255, 252, 237, 242),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -22,18 +22,7 @@ class LoginPage extends StatelessWidget {
                 SizedBox(height: 90),
 
                 //logo
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    gradient: LinearGradient(
-                      colors: [
-                        Colors.white38,
-                        Colors.white,                        
-                      ],
-                    ),
-                  ),
-                  child: Image.asset("assetSaya/logoGEES.png", scale: 2.5),
-                ),
+                Image.asset("assetSaya/logoGEES.png", scale: 2.5),
 
                 SizedBox(height: 25),
 
@@ -43,7 +32,7 @@ class LoginPage extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w500,
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 55, 78, 123),
                   ),
                 ),
 
@@ -65,21 +54,7 @@ class LoginPage extends StatelessWidget {
                   obscureText: true,
                 ),
 
-                SizedBox(height: 25),
-
-                //forgot password
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text('Forgot Password?',
-                          style: TextStyle(color: Colors.white)),
-                    ],
-                  ),
-                ),
-
-                SizedBox(height: 30),
+                SizedBox(height: 60),
 
                 //sign in button
                 SizedBox(
@@ -97,13 +72,19 @@ class LoginPage extends StatelessWidget {
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black87),
+                      backgroundColor: Color.fromARGB(255, 55, 78, 123),
+                    ),
                   ),
                 ),
                 SizedBox(height: 140),
-                Text("by SEESH team",
-                    style:
-                        TextStyle(fontSize: 10, fontWeight: FontWeight.w300)),
+                Text(
+                  "by SEESH team",
+                  style: TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w300,
+                    color: Color.fromARGB(255, 55, 78, 123),
+                  ),
+                ),
               ],
             ),
           ),

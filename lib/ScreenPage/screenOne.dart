@@ -44,13 +44,19 @@ class _ScreenOneState extends State<ScreenOne> {
                 ),
                 child: Column(
                   children: [
-                    SizedBox(height: 60),
-                    Text(
-                      "Help Button",
-                      style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                    SizedBox(height: 30),
+                    Container(
+                      
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        gradient: LinearGradient(
+                          colors: [
+                            Colors.white38,
+                            Colors.white,
+                          ],
+                        ),
+                      ),
+                      child: Image.asset("assetSaya/logoGEES.png", scale: 2.5),
                     ),
                     SizedBox(height: 50),
                     Center(
@@ -63,10 +69,12 @@ class _ScreenOneState extends State<ScreenOne> {
                               context: context,
                               type: QuickAlertType.confirm,
                               text: "Are You Sure Call for Help?",
-                              confirmBtnColor: Color.fromARGB(255, 234, 143, 174),
+                              confirmBtnColor:
+                                  Color.fromARGB(255, 234, 143, 174),
                               title: "CONFIRMATION",
                               onConfirmBtnTap: () {
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                                Navigator.of(context)
+                                    .push(MaterialPageRoute(builder: (context) {
                                   return SearchingPage();
                                 }));
                               },
@@ -99,7 +107,7 @@ class _ScreenOneState extends State<ScreenOne> {
                 ),
               ),
               ////////////AKHIR TOMBOL UTAMA////////////
-    
+
               SizedBox(height: 5),
               Container(
                 decoration: BoxDecoration(
@@ -115,7 +123,7 @@ class _ScreenOneState extends State<ScreenOne> {
                 ),
               ),
               SizedBox(height: 50),
-    
+
               ////////////AWAL DAILY INFORMATION////////////
               Text(
                 "DAILY INFORMATION",
@@ -146,7 +154,7 @@ class _ScreenOneState extends State<ScreenOne> {
                 ),
               ),
               ////////////AKHIR DAILY INFORMATION////////////
-    
+
               SizedBox(height: 20)
             ],
           ),
