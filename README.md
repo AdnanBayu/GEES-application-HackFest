@@ -1,6 +1,6 @@
-# hackathon_gdsc
+# GEES - HackFest
 
-A new Flutter project.
+Flutter app developed for HackFest competition by GDSC. This app developed to reduce sexual harassment and build a healthier social community.
 
 ## Getting Started
 
