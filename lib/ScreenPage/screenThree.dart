@@ -57,7 +57,7 @@ class ScreenThree extends StatelessWidget {
               Column(
                 children: [
         
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
         
                   ///////////HADIAH 1///////////
                   Padding(
@@ -101,7 +101,7 @@ class ScreenThree extends StatelessWidget {
                   ),
                   ///////////HADIAH 1///////////
                   
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
                   
                   ///////////HADIAH 2///////////
                   Padding(
@@ -145,7 +145,7 @@ class ScreenThree extends StatelessWidget {
                   ),
                   ///////////HADIAH 2///////////
                   ///
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
                   
                   ///////////HADIAH 3///////////
                   Padding(
@@ -189,7 +189,7 @@ class ScreenThree extends StatelessWidget {
                   ),
                   ///////////HADIAH 3///////////
                   ///
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
                   
                   ///////////HADIAH 4///////////
                   Padding(
