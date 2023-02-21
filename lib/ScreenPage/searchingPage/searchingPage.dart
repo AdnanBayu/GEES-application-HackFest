@@ -27,7 +27,15 @@ class SearchingPage extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            SizedBox(height: 120),
+            TextButton.icon(
+              style: TextButton.styleFrom(
+                primary: Colors.white
+              ),
+              onPressed: () {},
+              icon: Icon(Icons.call),
+              label: Text("Press this to call police"),
+            ),
+            SizedBox(height: 100),
             SizedBox(
               height: 30,
               width: 180,
