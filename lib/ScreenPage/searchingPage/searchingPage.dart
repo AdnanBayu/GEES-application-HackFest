@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:lottie/lottie.dart';
 
 class SearchingPage extends StatelessWidget {
   const SearchingPage({super.key});
 
+  final String policeNumber = "+6285540629707"; 
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -31,7 +33,9 @@ class SearchingPage extends StatelessWidget {
               style: TextButton.styleFrom(
                 primary: Colors.white
               ),
-              onPressed: () {},
+              onPressed: () async {
+                await FlutterPhoneDirectCaller.callNumber(policeNumber);
+              },
               icon: Icon(Icons.call),
               label: Text("Press this to call police"),
             ),

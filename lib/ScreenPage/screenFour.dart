@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
+import 'package:hackathon_gdsc/ScreenPage/profileScreenButton/donatePage.dart';
+
 class ScreenFour extends StatelessWidget {
   ScreenFour({super.key});
 
   var screenWidth = window.physicalSize.width;
+  final String usernameUser = "USERNAME";
+  final String emailUser = "@email";
 
   @override
   Widget build(BuildContext context) {
@@ -12,56 +16,121 @@ class ScreenFour extends StatelessWidget {
       onWillPop: () async => false,
       child: Scaffold(
         backgroundColor: Color.fromARGB(255, 234, 143, 174),
-        
-        
-        ////////////AWAL TOP BAR////////////
-        appBar: AppBar(
-          toolbarHeight: 120,
-          backgroundColor: Color.fromARGB(255,55,78,123),
-          automaticallyImplyLeading: false,
-          titleSpacing: 0,
-          title: Row(
-            children: <Widget>[
-              SizedBox(width: screenWidth / 6.5),
-              Icon(
-                Icons.account_circle,
-                size: 80,
+        body: Column(
+          children: [
+            ////////////AWAL TOP BAR////////////
+            Material(
+              elevation: 10,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 55, 78, 123),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(width: 30),
+                    Icon(
+                      Icons.account_circle,
+                      size: 120,
+                    ),
+                    SizedBox(width: 20),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      // ignore: prefer_const_literals_to_create_immutables
+                      children: [
+                        Text(
+                          usernameUser,
+                          style: TextStyle(
+                              fontSize: 23,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(height: 5),
+                        Text(
+                          emailUser,
+                          style: TextStyle(
+                            fontSize: 17,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ],
-          ),
-        ),
-        ////////////AKHIR TOP BAR////////////
-    
-    
-        body: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20),
-          child: ListView(
-            children: [
-              //first button
-              SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {},
-                child: Text("Account settings"),
-                style: ElevatedButton.styleFrom(primary: Color.fromARGB(255,55,78,123)),
-              ),
-    
-              //second button
-              SizedBox(height: 5),
-              ElevatedButton(
-                onPressed: () {},
-                child: Text("Licenses"),
-                style: ElevatedButton.styleFrom(primary: Color.fromARGB(255,55,78,123)),
-              ),
-    
-              //third button
-              SizedBox(height: 5),
-              ElevatedButton(
-                onPressed: () {},
-                child: Text("Contact Us"),
-                style: ElevatedButton.styleFrom(primary: Color.fromARGB(255,55,78,123)),
-              )
-            ],
-          ),
+            ),
+            ////////////AKHIR TOP BAR////////////
+            ///
+            SizedBox(height: 20),
+
+            ///
+            Column(
+              children: [
+                //first button
+                SizedBox(
+                  width: 300,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text("Account settings"),
+                    style: ElevatedButton.styleFrom(
+                      primary: Color.fromARGB(255, 55, 78, 123),
+                    ),
+                  ),
+                ),
+
+                SizedBox(height: 5),
+
+                //second button
+                SizedBox(
+                  width: 300,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return LicensePage();
+                      }));
+                    },
+                    child: Text("Licenses"),
+                    style: ElevatedButton.styleFrom(
+                        primary: Color.fromARGB(255, 55, 78, 123)),
+                  ),
+                ),
+
+                SizedBox(height: 5),
+
+                //third button
+                SizedBox(
+                  width: 300,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text("Contact Us"),
+                    style: ElevatedButton.styleFrom(
+                      primary: Color.fromARGB(255, 55, 78, 123),
+                    ),
+                  ),
+                ),
+
+                SizedBox(height: 5),
+
+                //fourth button
+                SizedBox(
+                  width: 300,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return DonatePage();
+                      }));
+                    },
+                    child: Text("Donate"),
+                    style: ElevatedButton.styleFrom(
+                        primary: Color.fromARGB(255, 55, 78, 123)),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

@@ -41,6 +41,7 @@ dependencies:
   smooth_page_indicator: ^1.0.0+2
   like_button: ^2.0.4
   quickalert: ^0.0.2
+  flutter_phone_direct_caller: ^2.0.0
 
 dev_dependencies:
   flutter_test:

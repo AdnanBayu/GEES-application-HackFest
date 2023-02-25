@@ -4,6 +4,7 @@ import 'package:like_button/like_button.dart';
 class InfoOne extends StatelessWidget {
   const InfoOne({super.key});
 
+  final String beritaSatu = "https://drive.google.com/uc?export=view&id=1XlRTCXH7SnpwLeDu_W_cvjoUOQT7fmhO";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,6 +19,7 @@ class InfoOne extends StatelessWidget {
               width: 500,
               height: 300,
               color: Colors.black,
+              child: Image.network(beritaSatu),
             ),
           ),
         ),
@@ -25,7 +27,7 @@ class InfoOne extends StatelessWidget {
           left: MediaQuery.of(context).size.width/20,
           bottom: MediaQuery.of(context).size.width/20,
           child: LikeButton(
-            size: 40,
+            size: 70,
           ),
         )
         ]

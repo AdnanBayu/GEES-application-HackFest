@@ -1,7 +1,11 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class ScreenThree extends StatelessWidget {
   const ScreenThree({super.key});
+
+  final int PoinUser = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +21,7 @@ class ScreenThree extends StatelessWidget {
                 elevation: 10,
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 55, 78, 123),
+                    color: const Color.fromARGB(255, 55, 78, 123),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -29,6 +33,7 @@ class ScreenThree extends StatelessWidget {
                       SizedBox(width: 20),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        // ignore: prefer_const_literals_to_create_immutables
                         children: [
                           Text(
                             "Your Points : ",
@@ -38,7 +43,7 @@ class ScreenThree extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            "1000 pts",
+                            PoinUser.toString(),
                             style: TextStyle(
                               fontSize: 23,
                               color: Colors.white,
@@ -52,35 +57,36 @@ class ScreenThree extends StatelessWidget {
                 ),
               ),
               ////////////AKHIR TOP BAR////////////
-        
+
               ///////////AWAL DAFTAR HADIAH///////////
               Column(
                 children: [
-        
                   SizedBox(height: 10),
-        
+                  ///
                   ///////////HADIAH 1///////////
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 55, 78, 123),
-                        borderRadius: BorderRadius.circular(50)
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        shape: StadiumBorder(),
+                        backgroundColor: const Color.fromARGB(255, 55, 78, 123),
                       ),
                       child: Row(
                         children: [
-                          Image(
-                            image: NetworkImage(
-                                "https://alfamart.co.id/storage/page/February2022/dRNzzS17nfiafonStDGR.png",
-                                scale: 4),
+                          Image.asset(
+                            "assetSaya/gopayLogo.png",
+                            scale: 7,
                           ),
+                          SizedBox(width: 10),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
+                            // ignore: prefer_const_literals_to_create_immutables
                             children: [
                               Text(
                                 "Gopay E-Voucher Rp 100.000",
                                 style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 15,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -94,37 +100,39 @@ class ScreenThree extends StatelessWidget {
                                 ),
                               ),
                             ],
-                          ),                    
+                          ),
                         ],
                       ),
                     ),
                   ),
                   ///////////HADIAH 1///////////
-                  
+                  ///
                   SizedBox(height: 10),
-                  
+                  ///
                   ///////////HADIAH 2///////////
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 55, 78, 123),
-                        borderRadius: BorderRadius.circular(50)
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        shape: StadiumBorder(),
+                        backgroundColor: const Color.fromARGB(255, 55, 78, 123),
                       ),
                       child: Row(
                         children: [
-                          Image(
-                            image: NetworkImage(
-                                "https://alfamart.co.id/storage/page/February2022/dRNzzS17nfiafonStDGR.png",
-                                scale: 4),
+                          Image.asset(
+                            "assetSaya/gopayLogo.png",
+                            scale: 7,
                           ),
+                          SizedBox(width: 10),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
+                            // ignore: prefer_const_literals_to_create_immutables
                             children: [
                               Text(
                                 "Gopay E-Voucher Rp 100.000",
                                 style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 15,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -138,7 +146,7 @@ class ScreenThree extends StatelessWidget {
                                 ),
                               ),
                             ],
-                          ),                    
+                          ),
                         ],
                       ),
                     ),
@@ -146,29 +154,31 @@ class ScreenThree extends StatelessWidget {
                   ///////////HADIAH 2///////////
                   ///
                   SizedBox(height: 10),
-                  
+                  ///
                   ///////////HADIAH 3///////////
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 55, 78, 123),
-                        borderRadius: BorderRadius.circular(50)
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        shape: StadiumBorder(),
+                        backgroundColor: const Color.fromARGB(255, 55, 78, 123),
                       ),
                       child: Row(
                         children: [
-                          Image(
-                            image: NetworkImage(
-                                "https://alfamart.co.id/storage/page/February2022/dRNzzS17nfiafonStDGR.png",
-                                scale: 4),
+                          Image.asset(
+                            "assetSaya/gopayLogo.png",
+                            scale: 7,
                           ),
+                          SizedBox(width: 10),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
+                            // ignore: prefer_const_literals_to_create_immutables
                             children: [
                               Text(
                                 "Gopay E-Voucher Rp 100.000",
                                 style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 15,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -182,37 +192,39 @@ class ScreenThree extends StatelessWidget {
                                 ),
                               ),
                             ],
-                          ),                    
+                          ),
                         ],
                       ),
                     ),
                   ),
                   ///////////HADIAH 3///////////
                   ///
-                  SizedBox(height: 10),
-                  
+                  ///SizedBox(height: 10),
+                  ///
                   ///////////HADIAH 4///////////
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 55, 78, 123),
-                        borderRadius: BorderRadius.circular(50)
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        shape: StadiumBorder(),
+                        backgroundColor: const Color.fromARGB(255, 55, 78, 123),
                       ),
                       child: Row(
                         children: [
-                          Image(
-                            image: NetworkImage(
-                                "https://alfamart.co.id/storage/page/February2022/dRNzzS17nfiafonStDGR.png",
-                                scale: 4),
+                          Image.asset(
+                            "assetSaya/gopayLogo.png",
+                            scale: 7,
                           ),
+                          SizedBox(width: 10),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
+                            // ignore: prefer_const_literals_to_create_immutables
                             children: [
                               Text(
                                 "Gopay E-Voucher Rp 100.000",
                                 style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 15,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -226,12 +238,105 @@ class ScreenThree extends StatelessWidget {
                                 ),
                               ),
                             ],
-                          ),                    
+                          ),
                         ],
                       ),
                     ),
                   ),
                   ///////////HADIAH 4///////////
+                  ///
+                  ///SizedBox(height: 10),
+                  ///
+                  ///////////HADIAH 5///////////
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        shape: StadiumBorder(),
+                        backgroundColor: const Color.fromARGB(255, 55, 78, 123),
+                      ),
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            "assetSaya/gopayLogo.png",
+                            scale: 7,
+                          ),
+                          SizedBox(width: 10),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            // ignore: prefer_const_literals_to_create_immutables
+                            children: [
+                              Text(
+                                "Gopay E-Voucher Rp 100.000",
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                "required 12.000 points",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  ///////////HADIAH 5///////////
+                  ///
+                  ///SizedBox(height: 10),
+                  ///
+                  ///////////HADIAH 6///////////
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        shape: StadiumBorder(),
+                        backgroundColor: const Color.fromARGB(255, 55, 78, 123),
+                      ),
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            "assetSaya/gopayLogo.png",
+                            scale: 7,
+                          ),
+                          SizedBox(width: 10),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            // ignore: prefer_const_literals_to_create_immutables
+                            children: [
+                              Text(
+                                "Gopay E-Voucher Rp 100.000",
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                "required 12.000 points",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  ///////////HADIAH 6///////////
+                  ///
                 ],
               )
               ///////////AKHIR DAFTAR HADIAH///////////
