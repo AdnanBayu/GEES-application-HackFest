@@ -42,6 +42,8 @@ dependencies:
   like_button: ^2.0.4
   quickalert: ^0.0.2
   flutter_phone_direct_caller: ^2.0.0
+  geolocator: ^9.0.2
+  geocoding: ^2.0.5
 
 dev_dependencies:
   flutter_test:
