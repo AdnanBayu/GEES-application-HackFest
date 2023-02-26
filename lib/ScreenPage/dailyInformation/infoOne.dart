@@ -4,7 +4,7 @@ import 'package:like_button/like_button.dart';
 class InfoOne extends StatelessWidget {
   const InfoOne({super.key});
 
-  final String beritaSatu = "https://drive.google.com/uc?export=view&id=1XlRTCXH7SnpwLeDu_W_cvjoUOQT7fmhO";
+  final String beritaSatu = "https://drive.google.com/uc?export=view&id=11Yq82XCUioa0aZSFpmRISGG4AGwWB1Ie";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
