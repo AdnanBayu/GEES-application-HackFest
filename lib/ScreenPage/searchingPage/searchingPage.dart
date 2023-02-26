@@ -66,9 +66,7 @@ class _SearchingPageState extends State<SearchingPage> {
               child: Text(
                 "Your Location Is\nLongitude: $_longitude , Latitude: $_latitude",
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white
-                ),
+                style: TextStyle(color: Colors.white),
               ),
             ),
 
@@ -90,6 +88,8 @@ class _SearchingPageState extends State<SearchingPage> {
               ),
             ),
 
+            SizedBox(height: 10),
+
             /////TOMBOL CALL POLICE/////
             TextButton.icon(
               style: TextButton.styleFrom(primary: Colors.white),
@@ -97,10 +97,16 @@ class _SearchingPageState extends State<SearchingPage> {
                 await FlutterPhoneDirectCaller.callNumber(policeNumber);
               },
               icon: Icon(Icons.call),
-              label: Text("Press this to call police"),
+              label: Text(
+                "Press this to call police\n(free charge)",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold
+                ),
+              ),
             ),
 
-            SizedBox(height: 70),
+            SizedBox(height: 60),
 
             /////TOMBOL SET LOCATION/////
             SizedBox(
