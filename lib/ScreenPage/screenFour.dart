@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon_gdsc/ScreenPage/profileScreenButton/contactUs.dart';
 import 'dart:ui';
 
 import 'package:hackathon_gdsc/ScreenPage/profileScreenButton/donatePage.dart';
@@ -103,7 +104,11 @@ class ScreenFour extends StatelessWidget {
                 SizedBox(
                   width: 300,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                        return ContactUsPage();
+                      }));
+                    },
                     child: Text("Contact Us"),
                     style: ElevatedButton.styleFrom(
                       primary: Color.fromARGB(255, 55, 78, 123),

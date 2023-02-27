@@ -7,6 +7,8 @@ import 'package:hackathon_gdsc/ScreenPage/dailyInformation/infoTwo.dart';
 import 'package:hackathon_gdsc/ScreenPage/searchingPage/searchingPage.dart';
 import 'package:quickalert/quickalert.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:geocoding/geocoding.dart';
+import 'package:geolocator/geolocator.dart';
 
 class ScreenOne extends StatefulWidget {
   ScreenOne({super.key});
@@ -17,6 +19,43 @@ class ScreenOne extends StatefulWidget {
 
 class _ScreenOneState extends State<ScreenOne> {
   final _controller = PageController();
+  var _latitude = "";
+  var _longitude = "";
+  var _altitude = "";
+  var _speed = "";
+  var _address = "";
+
+  Future<void> _updatePosition() async {
+    Position pos = await _determinePosition();
+    List pm = await placemarkFromCoordinates(pos.latitude, pos.longitude);
+    setState(() {
+      _latitude = pos.latitude.toString();
+      _longitude = pos.longitude.toString();
+      _altitude = pos.altitude.toString();
+      _speed = pos.speed.toString();
+    });
+  }
+
+  Future<Position> _determinePosition() async {
+    bool serviceEnabled;
+    LocationPermission permission;
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      return Future.error('Location Services are Disabled');
+    }
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        return Future.error("Location Services are Denied");
+      }
+    }
+    if (permission == LocationPermission.deniedForever) {
+      return Future.error(
+          "Location Services are Permanently Denied, We Cannot Request Permissions");
+    }
+    return await Geolocator.getCurrentPosition();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +85,6 @@ class _ScreenOneState extends State<ScreenOne> {
                   children: [
                     SizedBox(height: 30),
                     Container(
-                      
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         gradient: LinearGradient(
@@ -58,7 +96,9 @@ class _ScreenOneState extends State<ScreenOne> {
                       ),
                       child: Image.asset("assetSaya/logoGEES.png", scale: 2.5),
                     ),
-                    SizedBox(height: 50),
+
+                    SizedBox(height: 25),
+
                     Center(
                       child: SizedBox(
                         width: 300,
@@ -96,13 +136,30 @@ class _ScreenOneState extends State<ScreenOne> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 40),
-                    Text(
-                      "Press this button to search for the nearest help\nand call the authorized party",
-                      style: TextStyle(fontSize: 15, color: Colors.white),
-                      textAlign: TextAlign.center,
+                    SizedBox(height: 30),
+                    /////TOMBOL SET LOCATION/////
+                    SizedBox(
+                      height: 30,
+                      width: 120,
+                      child: ElevatedButton(
+                        onPressed: _updatePosition,
+                        child: Text("Set Location"),
+                        style: ElevatedButton.styleFrom(
+                          elevation: 20,
+                          backgroundColor: Color.fromARGB(255, 55, 78, 123),
+                        ),
+                      ),
+                    ),                    
+                    SizedBox(height: 30),
+                    ///////LOKASI///////
+                    Center(
+                      child: Text(
+                        "Your Location Is\nLongitude: $_longitude , Latitude: $_latitude",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
-                    SizedBox(height: 50),
+                    SizedBox(height: 30)
                   ],
                 ),
               ),
