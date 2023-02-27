@@ -24,11 +24,13 @@ class _SearchingPageState extends State<SearchingPage> {
             SizedBox(height: 20),
 
             /////ANIMASI/////
+
             Center(
-              child: Lottie.network(
-                "https://assets9.lottiefiles.com/packages/lf20_bXGMKilbSf.json",
+              child: Lottie.asset(
+                "assetSaya/GeesSearch.json",
                 animate: true,
                 height: 400,
+                width: 400
               ),
             ),
             SizedBox(height: 10),
@@ -53,9 +55,7 @@ class _SearchingPageState extends State<SearchingPage> {
               label: Text(
                 "Press this to call police\n(free charge)",
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold
-                ),
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
             ),
 

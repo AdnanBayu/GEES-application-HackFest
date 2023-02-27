@@ -105,7 +105,8 @@ class ScreenFour extends StatelessWidget {
                   width: 300,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
                         return ContactUsPage();
                       }));
                     },
@@ -133,6 +134,14 @@ class ScreenFour extends StatelessWidget {
                         primary: Color.fromARGB(255, 55, 78, 123)),
                   ),
                 ),
+                SizedBox(height: 15),
+                Text(
+                  "HackFest 2023 - Team SEESH",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                  ),
+                )
               ],
             ),
           ],

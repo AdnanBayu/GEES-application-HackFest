@@ -28,7 +28,7 @@ class LoginPage extends StatelessWidget {
 
                 //welcoming text
                 Text(
-                  "Hi, welcome back👋",
+                  "make a difference and stop the violence",
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w500,

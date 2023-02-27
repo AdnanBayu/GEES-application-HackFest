@@ -149,7 +149,7 @@ class _ScreenOneState extends State<ScreenOne> {
                           backgroundColor: Color.fromARGB(255, 55, 78, 123),
                         ),
                       ),
-                    ),                    
+                    ),
                     SizedBox(height: 30),
                     ///////LOKASI///////
                     Center(
@@ -179,7 +179,7 @@ class _ScreenOneState extends State<ScreenOne> {
                   child: Icon(Icons.keyboard_double_arrow_down),
                 ),
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 0),
 
               ////////////AWAL DAILY INFORMATION////////////
               Text(
@@ -195,7 +195,10 @@ class _ScreenOneState extends State<ScreenOne> {
                 height: 300,
                 child: PageView(
                   controller: _controller,
-                  children: [InfoOne(), InfoTwo()],
+                  children: [
+                    InfoOne(),
+                    InfoTwo(),
+                  ],
                 ),
               ),
               SizedBox(height: 10),
