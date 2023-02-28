@@ -9,6 +9,8 @@ import 'package:quickalert/quickalert.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:socket_io_client/socket_io_client.dart' as IO;
+import 'dart:convert';
 
 class ScreenOne extends StatefulWidget {
   ScreenOne({super.key});
@@ -19,11 +21,11 @@ class ScreenOne extends StatefulWidget {
 
 class _ScreenOneState extends State<ScreenOne> {
   final _controller = PageController();
+  late IO.Socket socket;
   var _latitude = "";
   var _longitude = "";
   var _altitude = "";
   var _speed = "";
-  var _address = "";
 
   Future<void> _updatePosition() async {
     Position pos = await _determinePosition();
@@ -55,6 +57,33 @@ class _ScreenOneState extends State<ScreenOne> {
           "Location Services are Permanently Denied, We Cannot Request Permissions");
     }
     return await Geolocator.getCurrentPosition();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    connectToServer();
+  }
+
+  void connectToServer() {
+    socket = IO.io('https://9244-210-57-216-164.ap.ngrok.io', <String, dynamic>{
+      'transports': ['websocket'],
+      'autoConnect': false,
+    });
+
+    socket.connect();
+  }
+
+  void sendData() async {
+    await _updatePosition();
+    Map<String, dynamic> data = {
+      'lat': _latitude,
+      'lng': _longitude,
+    };
+
+    String jsonData = json.encode(data);
+
+    socket.emit('location', jsonData);
   }
 
   @override
@@ -142,7 +171,8 @@ class _ScreenOneState extends State<ScreenOne> {
                       height: 30,
                       width: 120,
                       child: ElevatedButton(
-                        onPressed: _updatePosition,
+                        onPressed:                          
+                          sendData,
                         child: Text("Set Location"),
                         style: ElevatedButton.styleFrom(
                           elevation: 20,
