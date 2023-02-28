@@ -4,7 +4,7 @@ import 'package:like_button/like_button.dart';
 class InfoOne extends StatelessWidget {
   const InfoOne({super.key});
 
-  final String beritaSatu = "https://drive.google.com/uc?export=view&id=11Yq82XCUioa0aZSFpmRISGG4AGwWB1Ie";
+  final String beritaSatu = "assetSaya/dailyInformation1.png";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +19,7 @@ class InfoOne extends StatelessWidget {
               width: 500,
               height: 300,
               color: Colors.black,
-              child: Image.network(beritaSatu),
+              child: Image.asset(beritaSatu),
             ),
           ),
         ),
