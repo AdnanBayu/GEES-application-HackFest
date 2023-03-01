@@ -63,10 +63,11 @@ class _ScreenOneState extends State<ScreenOne> {
   void initState() {
     super.initState();
     connectToServer();
+    _updatePosition();
   }
 
   void connectToServer() {
-    socket = IO.io('https://9244-210-57-216-164.ap.ngrok.io', <String, dynamic>{
+    socket = IO.io('https://8a81-210-57-216-164.ap.ngrok.io', <String, dynamic>{
       'transports': ['websocket'],
       'autoConnect': false,
     });

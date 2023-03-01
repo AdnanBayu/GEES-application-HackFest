@@ -1,18 +1,28 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:hackathon_gdsc/LoginScreen/textField.dart';
 import 'package:hackathon_gdsc/ScreenPage/baseScreen.dart';
 import 'package:quickalert/quickalert.dart';
+import 'package:http/http.dart' as http;
+import 'package:logger/logger.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   LoginPage({super.key});
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   //untuk sementara username dan password fix adalah "hackfest" dua-duanya
-
   final userNameController = TextEditingController();
-  final passwordController = TextEditingController();
 
+  final passwordController = TextEditingController();
+  var linkNgrok = "https://6fb6-210-57-216-164.ap.ngrok.io";
+  var logger = Logger();
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -66,9 +76,18 @@ class LoginPage extends StatelessWidget {
                     width: 200,
                     height: 35,
                     child: ElevatedButton(
-                      onPressed: () {
-                        if (userNameController.text == 'hackfest' &&
-                            passwordController.text == 'hackfest') {
+                      onPressed: () async {
+                        final response = await http.post(
+                          Uri.parse(
+                              linkNgrok+"/account/login"),
+                          body: {
+                            'username': userNameController.text,
+                            'password': passwordController.text
+                          },
+                        );
+                        final jsonPost = jsonDecode(response.body);
+                        logger.d(response.body);
+                        if (response.statusCode == 200 || jsonPost['msg'] != 'found') {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => const BaseScreen(),
@@ -76,12 +95,12 @@ class LoginPage extends StatelessWidget {
                           );
                         } else {
                           QuickAlert.show(
-                            context: context,
-                            type: QuickAlertType.error,
-                            title: 'Oops...',
-                            text: 'incorrect email or password',
-                            confirmBtnColor: Color.fromARGB(255, 55, 78, 123)
-                          );
+                              context: context,
+                              type: QuickAlertType.error,
+                              title: 'Oops...',
+                              text: 'incorrect email or password',
+                              confirmBtnColor:
+                                  Color.fromARGB(255, 55, 78, 123));
                         }
                       },
                       child: Text(
