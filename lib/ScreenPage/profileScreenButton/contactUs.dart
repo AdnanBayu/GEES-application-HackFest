@@ -9,17 +9,19 @@ class ContactUsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color.fromARGB(255, 234, 143, 174),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("for business inquiries you can contact us at:"),
-            Text(emailCompany),
-            Text(instagramCompany),
-            Text(websiteCompany),
-          ],
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Color.fromARGB(255, 234, 143, 174),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("for business inquiries you can contact us at:"),
+              Text(emailCompany),
+              Text(instagramCompany),
+              Text(websiteCompany),
+            ],
+          ),
         ),
       ),
     );
