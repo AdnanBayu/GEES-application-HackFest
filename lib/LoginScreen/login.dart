@@ -77,17 +77,17 @@ class _LoginPageState extends State<LoginPage> {
                     height: 35,
                     child: ElevatedButton(
                       onPressed: () async {
-                        final response = await http.post(
-                          Uri.parse(
-                              linkNgrok+"/account/login"),
-                          body: {
-                            'username': userNameController.text,
-                            'password': passwordController.text
-                          },
-                        );
-                        final jsonPost = jsonDecode(response.body);
-                        logger.d(response.body);
-                        if (response.statusCode == 200 || jsonPost['msg'] != 'found') {
+                        // final response = await http.post(
+                        //   Uri.parse(
+                        //       linkNgrok+"/account/login"),
+                        //   body: {
+                        //     'username': userNameController.text,
+                        //     'password': passwordController.text
+                        //   },
+                        // );
+                        // final jsonPost = jsonDecode(response.body);
+                        // logger.d(response.body);
+                        if (userNameController.text == "hackfest" && passwordController.text == "hackfest") {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => const BaseScreen(),
