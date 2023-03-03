@@ -84,18 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                         // );
                         // final jsonPost = jsonDecode(response.body);
                         // logger.d(response.body);
-<<<<<<< HEAD
                         if (userNameController.text == "hackfest" && passwordController.text == "hackfest") {
-=======
-                        // if (response.statusCode == 200 || jsonPost['msg'] != 'found') {
-                        //   Navigator.of(context).push(
-                        //     MaterialPageRoute(
-                        //       builder: (context) => const BaseScreen(),
-                        //     ),
-                        //   );
-                        if (userNameController == "hackfest" &&
-                            passwordController == "hackfest") {
->>>>>>> e281f2d4f6beb1128f4f7d382560db100c40391b
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => const BaseScreen(),
