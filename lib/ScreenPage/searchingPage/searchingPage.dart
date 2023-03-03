@@ -60,7 +60,7 @@ class _SearchingPageState extends State<SearchingPage> {
                 ),
               ),
       
-              SizedBox(height: 110),
+              SizedBox(height: 100),
       
               /////TOMBOL BACK/////
               SizedBox(
