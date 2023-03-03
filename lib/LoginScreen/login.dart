@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sort_child_properties_last
-
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -19,7 +17,6 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   //untuk sementara username dan password fix adalah "hackfest" dua-duanya
   final userNameController = TextEditingController();
-
   final passwordController = TextEditingController();
   var linkNgrok = "https://6fb6-210-57-216-164.ap.ngrok.io";
   var logger = Logger();
@@ -87,7 +84,18 @@ class _LoginPageState extends State<LoginPage> {
                         // );
                         // final jsonPost = jsonDecode(response.body);
                         // logger.d(response.body);
+<<<<<<< HEAD
                         if (userNameController.text == "hackfest" && passwordController.text == "hackfest") {
+=======
+                        // if (response.statusCode == 200 || jsonPost['msg'] != 'found') {
+                        //   Navigator.of(context).push(
+                        //     MaterialPageRoute(
+                        //       builder: (context) => const BaseScreen(),
+                        //     ),
+                        //   );
+                        if (userNameController == "hackfest" &&
+                            passwordController == "hackfest") {
+>>>>>>> e281f2d4f6beb1128f4f7d382560db100c40391b
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => const BaseScreen(),
@@ -102,6 +110,8 @@ class _LoginPageState extends State<LoginPage> {
                               confirmBtnColor:
                                   Color.fromARGB(255, 55, 78, 123));
                         }
+                        print(userNameController.toString());
+                        print(userNameController.toString());
                       },
                       child: Text(
                         "Sign In",
